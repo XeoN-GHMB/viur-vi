@@ -25,12 +25,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          submodules: true
+          
       #build vi
       - name: build vi
         run: |
           echo $GITHUB_WORKSPACE
-          ls $GITHUB_WORKSPACE
-          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/viur-vi/vi -t /build
+          ls $GITHUB_WORKSPACE/vi
+          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
           ls /build
 
 
