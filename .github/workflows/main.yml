@@ -52,4 +52,7 @@ jobs:
           path: /build
 
       - name: archive
+        run: cd /build && zip viur-vi.zip -r ./*
+
+      - name: create release
         run: ls /build
