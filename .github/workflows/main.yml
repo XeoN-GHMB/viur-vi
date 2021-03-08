@@ -27,14 +27,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-          
+
       #build vi
       - name: build vi
         run: |
           echo $GITHUB_WORKSPACE
-          ls $GITHUB_WORKSPACE/vi
           python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
           ls /build
+          echo ----
+          ls /
 
 
 
