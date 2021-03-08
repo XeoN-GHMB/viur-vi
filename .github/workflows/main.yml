@@ -31,7 +31,7 @@ jobs:
           ls /
           ls $GITHUB_WORKSPACE
           ls /scripts
-          python3 /scripts/flare.py -s $GITHUB_WORKSPACE -t /build
+          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
           ls /
           ls /build
 
