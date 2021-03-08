@@ -29,23 +29,16 @@ jobs:
           submodules: true
 
       #build vi
-      - name: build vi
+      - name: build Vi
         run: |
           echo $GITHUB_WORKSPACE
           python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
-          ls /build
-          echo ----
-          ls /
 
+  release:
+    runs-on: ubuntu-latest
+    container: viur/viur-flare-build
+    needs: [build]
 
-
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: ls /
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    steps:
+      - name: archive
+        run: echo ttttt
