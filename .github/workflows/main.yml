@@ -34,11 +34,22 @@ jobs:
           echo $GITHUB_WORKSPACE
           python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t $GITHUB_WORKSPACE/build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: uploadfiles
+          path: $GITHUB_WORKSPACE/build
+
+
   release:
     runs-on: ubuntu-latest
     container: viur/viur-flare-build
     needs: [build]
 
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: downloadfiles
+          path: $GITHUB_WORKSPACE/build
+
       - name: archive
         run: ls $GITHUB_WORKSPACE
