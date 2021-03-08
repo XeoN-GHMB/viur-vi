@@ -27,6 +27,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      #build vi
+      - name: build vi
+        run: |
+          python3 /scripts/flare.py -s /workspace -t /build
+
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ls /
