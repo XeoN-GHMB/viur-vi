@@ -27,6 +27,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
       - uses: actions/checkout@v2
         with:
           submodules: true
@@ -49,6 +50,9 @@ jobs:
     needs: [build]
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - uses: actions/download-artifact@master
         with:
           name: buildfiles
@@ -61,7 +65,6 @@ jobs:
         id: tag_name
         run: |
           echo ::set-output name=current_version::${GITHUB_REF#refs/tags/v}
-        shell: bash
 
       - name: fetch changelog info
         id: changelog_reader
