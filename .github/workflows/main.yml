@@ -31,6 +31,7 @@ jobs:
       - name: build vi
         run: |
           python3 /scripts/flare.py -s /workspace -t /build
+          ls /build
 
 
       # Runs a single command using the runners shell
