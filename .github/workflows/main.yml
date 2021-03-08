@@ -32,7 +32,7 @@ jobs:
       - name: build Vi
         run: |
           echo $GITHUB_WORKSPACE
-          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
+          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t $GITHUB_WORKSPACE/build
 
   release:
     runs-on: ubuntu-latest
@@ -41,4 +41,4 @@ jobs:
 
     steps:
       - name: archive
-        run: ls /
+        run: ls $GITHUB_WORKSPACE
