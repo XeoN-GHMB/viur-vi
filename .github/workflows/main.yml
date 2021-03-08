@@ -32,12 +32,12 @@ jobs:
       - name: build Vi
         run: |
           echo $GITHUB_WORKSPACE
-          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t $GITHUB_WORKSPACE/build
+          python3 /scripts/flare.py -s $GITHUB_WORKSPACE/vi -t /build
 
       - uses: actions/upload-artifact@master
         with:
           name: uploadfiles
-          path: $GITHUB_WORKSPACE/build
+          path: /build
 
 
   release:
@@ -49,7 +49,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: downloadfiles
-          path: $GITHUB_WORKSPACE/build
+          path: /build
 
       - name: archive
         run: ls $GITHUB_WORKSPACE
