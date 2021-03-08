@@ -30,11 +30,14 @@ jobs:
       #build vi
       - name: build vi
         run: |
-          ls /workspace,
-          ls /scripts,
-          python3 /scripts/flare.py -s /workspace -t /build,
-          ls /build,
           ls /
+          ls /workspace
+          ls /scripts
+          python3 /scripts/flare.py -s /workspace -t /build
+          ls /
+          ls /build
+
+
 
 
       # Runs a single command using the runners shell
