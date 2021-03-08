@@ -52,4 +52,4 @@ jobs:
           path: /build
 
       - name: archive
-        run: ls $GITHUB_WORKSPACE
+        run: ls /build
