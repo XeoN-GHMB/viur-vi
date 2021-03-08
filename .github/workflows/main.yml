@@ -29,9 +29,9 @@ jobs:
       - name: build vi
         run: |
           ls /
-          ls /workspace
+          ls $GITHUB_WORKSPACE
           ls /scripts
-          python3 /scripts/flare.py -s /workspace -t /build
+          python3 /scripts/flare.py -s $GITHUB_WORKSPACE -t /build
           ls /
           ls /build
 
